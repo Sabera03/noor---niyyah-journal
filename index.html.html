@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Noor & Niyyah | My Deen Growth Space</title>
+<style>
+:root{--bg:#f7f1e7;--card:#fffdf8;--ink:#46382f;--muted:#7c7065;--olive:#72775e;--gold:#b89559;--line:#e2d8c8;--soft:#efe8db}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,serif}button,input,textarea,select{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:5;background:rgba(255,253,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:14px 5%;display:flex;justify-content:space-between;gap:15px;align-items:center}.brand{font-weight:bold;letter-spacing:2px}.brand small{display:block;color:var(--gold);font-size:9px;text-align:center;margin-top:3px}nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}nav button{border:0;background:transparent;color:var(--ink);padding:8px}
+.page{display:none;max-width:1120px;margin:auto;padding:35px 18px 75px}.page.active{display:block}.hero{min-height:68vh;display:grid;place-items:center;text-align:center;padding:40px 15px}.moon{font-size:52px;color:var(--gold)}h1{font-size:clamp(42px,8vw,78px);margin:10px 0}h2{text-align:center;font-size:31px;margin:5px 0 8px}.lead{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 25px;line-height:1.7;font-size:17px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 25px rgba(70,56,47,.05)}.card h3{margin:0 0 9px}.icon{font-size:28px}.btn{border:0;border-radius:25px;padding:11px 17px;background:var(--ink);color:white;margin-top:8px}.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--ink)}label{display:block;font-weight:bold;font-size:14px;margin-top:9px}input,textarea,select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fffdf9;color:var(--ink);margin-top:5px}textarea{min-height:85px}.entry{margin-top:13px}.entry p{line-height:1.55}.empty{text-align:center;color:var(--muted);padding:18px}.quote{border-left:3px solid var(--gold);padding:12px 16px;margin:20px auto;max-width:700px;font-style:italic;color:var(--muted)}
+.prayer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:10px}.prayer{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;background:#fffdf8}.prayer button{width:100%;border:0;border-radius:20px;padding:7px;background:var(--soft);color:var(--ink)}.prayer.done{border-color:var(--olive);background:#f2f4ed}.prayer.done button{background:var(--olive);color:white}
+.counter{text-align:center;font-size:46px;color:var(--gold);font-weight:bold}.bigTap{width:92px;height:92px;border-radius:50%;border:1px solid var(--gold);background:#fff8e8;color:var(--ink);font-size:18px}.pills{display:flex;flex-wrap:wrap;gap:8px}.pill{padding:9px 12px;border:1px solid var(--line);border-radius:22px;background:#fffdf8}.checkrow{display:flex;align-items:center;gap:8px;margin:7px 0}.checkrow input{width:auto}.progress{height:12px;background:var(--soft);border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;background:var(--olive);width:0}.center{text-align:center}.section-note{text-align:center;color:var(--muted);margin-bottom:22px}.saved{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}.tiny{font-size:12px;color:var(--muted)}
+@media(max-width:650px){header{flex-direction:column;align-items:stretch}nav{justify-content:center}.page{padding-top:25px}.hero{min-height:60vh}h2{font-size:26px}}
+</style>
+</head>
+<body>
+<header><div class="brand">NOOR & NIYYAH<small>FAITH • PURPOSE • BEAUTY</small></div>
+<nav><button onclick="go('home')">Home</button><button onclick="go('reflect')">Reflect</button><button onclick="go('duas')">Duas</button><button onclick="go('salah')">Salah</button><button onclick="go('growth')">Growth</button><button onclick="go('heart')">My Heart</button></nav></header>
+
+<section id="home" class="page active"><div class="hero"><div><div class="moon">☾</div><div style="letter-spacing:3px;color:var(--gold)">NOOR & NIYYAH</div><h1>Pause. Reflect. Grow.</h1><p class="lead">Your personal space for Qur'an reflection, Salah, Dua, Dhikr and gentle steps towards growing in your Deen, in shaa Allah.</p><button class="btn" onclick="go('reflect')">Begin Reflecting</button><button class="btn alt" onclick="go('heart')">I Need a Reminder 🤍</button><div class="quote">“Then do they not reflect upon the Qur'an?” — Qur'an 4:82</div></div></div>
+<div class="grid">
+<div class="card"><div class="icon">📖</div><h3>Qur'an Reflection</h3><p>Read, reflect and take one action.</p><button class="btn alt" onclick="go('reflect')">Open</button></div>
+<div class="card"><div class="icon">🤲</div><h3>My Dua Corner</h3><p>Keep your duas and remember answered ones.</p><button class="btn alt" onclick="go('duas')">Open</button></div>
+<div class="card"><div class="icon">🕌</div><h3>Salah Journey</h3><p>Track your prayers gently.</p><button class="btn alt" onclick="go('salah')">Open</button></div>
+<div class="card"><div class="icon">📿</div><h3>Dhikr</h3><p>A quiet moment of remembrance.</p><button class="btn alt" onclick="go('heart');setTimeout(()=>document.getElementById('dhikr').scrollIntoView(),100)">Open</button></div>
+<div class="card"><div class="icon">🌱</div><h3>My Deen Growth</h3><p>Set sincere weekly intentions.</p><button class="btn alt" onclick="go('growth')">Open</button></div>
+<div class="card"><div class="icon">💌</div><h3>Letter to Future Me</h3><p>Leave a note from your heart.</p><button class="btn alt" onclick="go('heart')">Open</button></div>
+</div></section>
+
+<section id="reflect" class="page"><h2>📖 The Noor Reflection Journal</h2><p class="section-note">From reading, to reflection, to action.</p><div class="card">
+<label>Surah</label><input id="rSurah" placeholder="e.g. Al-Fatiha"><label>Ayah</label><input id="rAyah" placeholder="e.g. 1:5"><label>Date</label><input id="rDate" type="date">
+<label>Today's Ayah</label><textarea id="rText"></textarea><label>What does it mean to me?</label><textarea id="rMeaning"></textarea><label>What did I learn?</label><textarea id="rLearn"></textarea><label>How can I apply it in my life?</label><textarea id="rApply"></textarea><label>One action I will take</label><input id="rAction"><label>My Dua</label><textarea id="rDua"></textarea><button class="btn" onclick="saveReflection()">Save My Reflection</button></div>
+<h3 style="margin-top:35px">My Reflections</h3><input id="rSearch" placeholder="Search reflections..." oninput="renderReflections()"><div id="reflectionList"></div></section>
+
+<section id="duas" class="page"><h2>🤲 My Dua Corner</h2><p class="section-note">A private place for what is in your heart.</p><div class="card"><textarea id="duaInput" placeholder="Write your dua..."></textarea><button class="btn" onclick="saveDua()">Save Dua</button></div><div class="grid" style="margin-top:18px"><div class="card"><h3>🤲 Making Dua</h3><div id="duaActive"></div></div><div class="card"><h3>🤍 Answered — Alhamdulillah</h3><div id="duaAnswered"></div></div></div></section>
+
+<section id="salah" class="page"><h2>🕌 My Salah Journey</h2><p class="section-note">A gentle tracker for consistency, not perfection.</p><div class="card"><label>Date</label><input id="salahDate" type="date"><div class="prayer-grid" id="prayerGrid"></div><label>How was my connection with Allah today?</label><textarea id="salahConnection"></textarea><label>What can I improve tomorrow?</label><textarea id="salahImprove"></textarea><button class="btn" onclick="saveSalah()">Save Today's Salah Journey</button><div class="saved" id="salahSaved"></div></div></section>
+
+<section id="growth" class="page"><h2>🌱 My Deen Growth</h2><p class="section-note">Not perfection. Just sincere progress.</p><div class="grid"><div class="card"><h3>This week I want to work on...</h3><div id="growthChecks"></div><label>My intention for this week</label><textarea id="growthIntent"></textarea><button class="btn" onclick="saveGrowth()">Save My Intention</button></div><div class="card center"><h3>Your gentle progress</h3><div class="counter" id="growthPercent">0%</div><div class="progress"><span id="growthBar"></span></div><p class="tiny">Small sincere steps matter.</p></div></div>
+<div class="card" style="margin-top:18px"><h3>📚 My Surah Journey</h3><label>Current Surah</label><input id="journeySurah"><label>My progress / reflection</label><textarea id="journeyNote"></textarea><button class="btn" onclick="saveJourney()">Save Journey</button><div id="journeySaved"></div></div></section>
+
+<section id="heart" class="page"><h2>🤍 A Space for Your Heart</h2><p class="section-note">Pause. Breathe. Return to Allah.</p><div class="grid">
+<div class="card"><h3>How is your heart today?</h3><div class="pills" id="moodPills"><button class="pill">😔 Heavy</button><button class="pill">🌧️ Struggling</button><button class="pill">🌱 Healing</button><button class="pill">🤍 Grateful</button><button class="pill">✨ Peaceful</button></div><div id="moodMessage"></div></div>
+<div class="card"><h3>🕊️ I Need a Reminder</h3><div class="quote" id="reminder">Your journey does not need to be perfect to be sincere.</div><button class="btn" onclick="newReminder()">Give Me a Reminder</button></div>
+<div class="card" id="dhikr"><h3>📿 Digital Dhikr</h3><div class="center"><p id="dhikrName">SubhanAllah</p><div class="counter" id="dhikrCount">0 / 33</div><button class="bigTap" onclick="countDhikr()">TAP</button><br><button class="btn alt" onclick="nextDhikr()">Next</button><button class="btn alt" onclick="resetDhikr()">Reset</button></div></div>
+<div class="card"><h3>🌸 Alhamdulillah For...</h3><label>One blessing today</label><textarea id="gratBlessing"></textarea><label>Someone I'm grateful for</label><textarea id="gratPerson"></textarea><label>Something Allah made easy</label><textarea id="gratEasy"></textarea><button class="btn" onclick="saveGratitude()">Save Gratitude</button></div>
+<div class="card"><h3>💌 Letter to My Future Self</h3><label>Open again after</label><input id="letterDate" type="date"><textarea id="letterText" placeholder="What is in your heart today?"></textarea><button class="btn" onclick="saveLetter()">Save Letter</button><div id="letters"></div></div>
+</div></section>
+
+<footer class="center" style="padding:28px;border-top:1px solid var(--line);color:var(--muted)">☾ NOOR & NIYYAH • Begin with your Niyyah. Walk towards your Noor.</footer>
+
+<script>
+const load=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}, save=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');scrollTo(0,0);renderAll()}
+function saveReflection(){let x={id:Date.now(),surah:rSurah.value,ayah:rAyah.value,date:rDate.value,text:rText.value,meaning:rMeaning.value,learn:rLearn.value,apply:rApply.value,action:rAction.value,dua:rDua.value};let a=load('nn_ref',[]);a.unshift(x);save('nn_ref',a);[rSurah,rAyah,rDate,rText,rMeaning,rLearn,rApply,rAction,rDua].forEach(e=>e.value='');renderReflections();alert('Reflection saved 🤍')}
+function renderReflections(){let q=(rSearch?.value||'').toLowerCase(),a=load('nn_ref',[]).filter(x=>JSON.stringify(x).toLowerCase().includes(q));reflectionList.innerHTML=a.length?a.map(x=>`<div class="card entry"><h3>${esc(x.surah)} ${esc(x.ayah)}</h3><small>${esc(x.date)}</small><p><b>What I learned:</b> ${esc(x.learn)}</p><p><b>My action:</b> ${esc(x.action)}</p><button class="btn alt" onclick="deleteReflection(${x.id})">Delete</button></div>`).join(''):'<div class="empty">Your reflections will appear here 🤍</div>'}
+function deleteReflection(id){save('nn_ref',load('nn_ref',[]).filter(x=>x.id!==id));renderReflections()}
+function saveDua(){if(!duaInput.value.trim())return;let a=load('nn_dua',[]);a.unshift({id:Date.now(),text:duaInput.value,answered:false});save('nn_dua',a);duaInput.value='';renderDuas()}
+function renderDuas(){let a=load('nn_dua',[]);duaActive.innerHTML=a.filter(x=>!x.answered).map(x=>`<div class="entry"><p>${esc(x.text)}</p><button class="btn alt" onclick="answerDua(${x.id})">Alhamdulillah, Answered 🤍</button></div>`).join('')||'<div class="empty">No duas saved yet.</div>';duaAnswered.innerHTML=a.filter(x=>x.answered).map(x=>`<div class="entry"><p>${esc(x.text)}</p><small>Alhamdulillah 🤍</small></div>`).join('')||'<div class="empty">Your answered duas will be remembered here.</div>'}
+function answerDua(id){save('nn_dua',load('nn_dua',[]).map(x=>x.id==id?{...x,answered:true}:x));renderDuas()}
+const prayers=['🌙 Tahajjud','🌅 Fajr','☀️ Dhuhr','🌤️ Asr','🌅 Maghrib','🌙 Isha','🤲 Istikhara (optional)'];
+function renderPrayers(){let state=load('nn_prayerDraft',{});prayerGrid.innerHTML=prayers.map((p,i)=>`<div class="prayer ${state[i]?'done':''}"><b>${p}</b><button onclick="togglePrayer(${i})">${state[i]?'✓ Prayed':'Mark Prayed'}</button></div>`).join('')}
+function togglePrayer(i){let s=load('nn_prayerDraft',{});s[i]=!s[i];save('nn_prayerDraft',s);renderPrayers()}
+function saveSalah(){let a=load('nn_salah',[]);a.unshift({id:Date.now(),date:salahDate.value,prayers:load('nn_prayerDraft',{}),connection:salahConnection.value,improve:salahImprove.value});save('nn_salah',a);save('nn_prayerDraft',{});salahConnection.value='';salahImprove.value='';renderPrayers();renderSalahSaved();alert('Salah journey saved 🤍')}
+function renderSalahSaved(){let x=load('nn_salah',[])[0];if(!x){salahSaved.innerHTML='';return}let n=Object.values(x.prayers).filter(Boolean).length;salahSaved.innerHTML=`<b>Latest saved:</b> ${esc(x.date||'Today')} • ${n}/${prayers.length} marked`}
+const growthItems=['Salah','Qur’an','Dhikr','Sabr','Gratitude','Kindness','Personal Goal'];
+function renderGrowthChecks(){let g=load('nn_growth',{checks:[]});growthChecks.innerHTML=growthItems.map((x,i)=>`<label class="checkrow"><input type="checkbox" data-i="${i}" ${g.checks?.[i]?'checked':''}> ${x}</label>`).join('')}
+function saveGrowth(){let checks=[...document.querySelectorAll('#growthChecks input')].map(x=>x.checked);save('nn_growth',{checks,intent:growthIntent.value});updateGrowth();alert('Intention saved 🤍')}
+function updateGrowth(){let g=load('nn_growth',{checks:[]}),n=Math.round((g.checks.filter(Boolean).length/growthItems.length)*100)||0;growthIntent.value=g.intent||'';growthPercent.textContent=n+'%';growthBar.style.width=n+'%'}
+function saveJourney(){save('nn_journey',{surah:journeySurah.value,note:journeyNote.value});renderJourney();alert('Surah journey saved 🤍')}
+function renderJourney(){let j=load('nn_journey',{});journeySurah.value=j.surah||'';journeyNote.value=j.note||'';journeySaved.innerHTML=j.surah?`<div class="saved"><b>Current journey:</b> ${esc(j.surah)}</div>`:''}
+const reminders=['Allah knows what your heart cannot explain.','Your journey does not need to be perfect to be sincere. Begin again.','A small step towards Allah is still a step towards Allah.','Be patient with your growth. Keep returning.','What feels heavy to you is never hidden from Allah.','Begin with your Niyyah. Walk towards your Noor.'];
+function newReminder(){reminder.textContent=reminders[Math.floor(Math.random()*reminders.length)]}
+moodPills.onclick=e=>{if(e.target.tagName!='BUTTON')return;save('nn_mood',e.target.textContent);moodMessage.innerHTML='<div class="quote">Whatever your heart is carrying, Allah knows. Pause, make dua, and take one gentle step forward 🤍</div>'}
+let dhikrs=[['SubhanAllah',33],['Alhamdulillah',33],['Allahu Akbar',34]],di=0,dc=0;
+function updateDhikr(){dhikrName.textContent=dhikrs[di][0];dhikrCount.textContent=dc+' / '+dhikrs[di][1]}
+function countDhikr(){if(dc<dhikrs[di][1])dc++;updateDhikr();if(dc===dhikrs[di][1])setTimeout(()=>alert('MashaAllah 🤍 Completed!'),100)}
+function nextDhikr(){di=(di+1)%dhikrs.length;dc=0;updateDhikr()}function resetDhikr(){dc=0;updateDhikr()}
+function saveGratitude(){save('nn_grat',{b:gratBlessing.value,p:gratPerson.value,e:gratEasy.value});alert('Alhamdulillah 🤍 Saved.')}
+function renderGratitude(){let g=load('nn_grat',{});gratBlessing.value=g.b||'';gratPerson.value=g.p||'';gratEasy.value=g.e||''}
+function saveLetter(){if(!letterText.value.trim())return;let a=load('nn_letters',[]);a.unshift({id:Date.now(),date:letterDate.value,text:letterText.value});save('nn_letters',a);letterText.value='';letterDate.value='';renderLetters();alert('Letter saved 🤍')}
+function renderLetters(){let a=load('nn_letters',[]);letters.innerHTML=a.map(x=>`<div class="saved"><small>Open after: ${esc(x.date||'Whenever your heart needs it')}</small><p>${esc(x.text)}</p></div>`).join('')}
+function renderAll(){renderReflections();renderDuas();renderPrayers();renderSalahSaved();renderGrowthChecks();updateGrowth();renderJourney();renderGratitude();renderLetters();updateDhikr()}
+renderAll();
+</script></body></html>
